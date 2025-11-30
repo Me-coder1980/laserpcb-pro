@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>LaserPCB PRO – Professional PCB Laser Workflow</title>
+<link rel="stylesheet" href="style.min.css">
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+
+<body>
+
+<div id="sidebar">
+  <h1 style="color:#2b7bff; margin:0; font-size:20px;">LaserPCB PRO</h1>
+  <p style="margin:0 0 10px; opacity:0.7;">Professional PCB Laser Workflow</p>
+  <hr style="border:0; border-bottom:1px solid #2c3140; margin:10px 0;">
+
+  <!-- Sidebar content -->
+  <div style="padding: 10px;">
+      <label for="fileInput" class="styledUploadButton">Upload Gerber</label>
+      <input type="file" id="fileInput" accept=".gtl,.gbl,.gts,.gbs,.gto,.gbo,.gko,.xln" style="display:none;">
+      
+      <button onclick="generateCopper()" class="styledButton">Generate Copper</button>
+      <button onclick="generateIsolation()" class="styledButton">Generate Isolation</button>
+      <button onclick="generateGcode()" class="styledButton">Export G-Code</button>
+      
+      <h3>Laser Settings</h3>
+      <label>Laser Power (%)</label>
+      <input type="number" id="laserPower" value="50">
+
+      <label>Feed Rate (mm/min)</label>
+      <input type="number" id="feedRate" value="300">
+
+      <label>Isolation (mm)</label>
+      <input type="number" id="isolation" value="0.2">
+      
+      <h3>Viewer</h3>
+      <button onclick="zoomIn()" class="styledButton">Zoom In</button>
+      <button onclick="zoomOut()" class="styledButton">Zoom Out</button>
+
+      <h3>Laser Control</h3>
+      <button onclick="connectLaser()" class="styledButton">Connect Laser</button>
+      <button onclick="startLaserJob()" class="styledButton">Start</button>
+  </div>
+</div>
+
+<div id="mainView">
+  <canvas id="pcbCanvas" width="1000" height="800"></canvas>
+
+  <div id="consoleBox">
+      <h3>Console</h3>
+      <textarea id="consoleOutput" readonly></textarea>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/clipper-lib@6.4.2/clipper.js"></script>
+<script src="app.min.js"></script>
+
+</body>
+</html>

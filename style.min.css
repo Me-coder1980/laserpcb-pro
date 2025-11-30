@@ -1,0 +1,11 @@
+body { margin:0; display:flex; background:#1e1e2f; color:white; font-family:Arial; }
+#sidebar { width:300px; background:#2c3140; padding:15px; overflow-y:auto; height:100vh; }
+#mainView { flex:1; padding:10px; }
+.styledButton, .styledUploadButton {
+  width:100%; padding:10px; background:#2b7bff; border:none;
+  color:white; margin:5px 0; cursor:pointer; font-weight:bold;
+}
+input[type=number] { width:100%; padding:8px; margin:5px 0; }
+#pcbCanvas { width:100%; background:black; border:1px solid #555; }
+#consoleBox { margin-top:20px; }
+#consoleOutput { width:100%; height:150px; background:#111; color:#0f0; }
